@@ -84,3 +84,8 @@
         };
     };
 };
+/ {
+  chosen {
+    /delete-property/ zmk,matrix-transform;
+  };
+};
