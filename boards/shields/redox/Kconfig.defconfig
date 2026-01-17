@@ -1,6 +1,6 @@
 # Copyright (c) 2021 The ZMK Contributors
 # SPDX-License-Identifier: MIT
-if SHIELD_REDOX_LEFT
+if SHIELD_REDOX_LEFT || SHIELD_REDOX_LEFT_STUDIO
 
 config ZMK_KEYBOARD_NAME
     default "Redox"
@@ -10,7 +10,7 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
-if SHIELD_REDOX_LEFT || SHIELD_REDOX_RIGHT
+if SHIELD_REDOX_LEFT || SHIELD_REDOX_LEFT_STUDIO || SHIELD_REDOX_RIGHT
 
 config ZMK_SPLIT
     default y
