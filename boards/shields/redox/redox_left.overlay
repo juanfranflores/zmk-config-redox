@@ -17,3 +17,13 @@
         , <&pro_micro 10 GPIO_ACTIVE_HIGH>
         ;
 };
+/ {
+  chosen {
+    zmk,physical-layout = &redox_physical_layout;
+    /delete-property/ zmk,matrix-transform;
+  };
+};
+
+&redox_physical_layout {
+  transform = <&default_transform>;
+};
