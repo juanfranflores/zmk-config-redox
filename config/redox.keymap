@@ -22,6 +22,16 @@
             bindings = <&kp LC(C)>;
             key-positions = <41 42>;
         };
+
+        bootloader_izq {
+            bindings = <&bootloader>;
+            key-positions = <0 62>;
+        };
+
+        bootloader_der {
+            bindings = <&bootloader>;
+            key-positions = <63 11>;
+        };
     };
 
     keymap {
