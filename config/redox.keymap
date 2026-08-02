@@ -46,14 +46,30 @@
     combos {
         compatible = "zmk,combos";
 
-        paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <43 44>;
+        // Clipboard sobre la fila ZXCV: cada combo = letra del atajo + su
+        // vecina derecha. prior-idle evita disparos tipeando rápido.
+        undo {
+            bindings = <&kp LC(Z)>;
+            key-positions = <41 42>;
+            require-prior-idle-ms = <150>;
+        };
+
+        cut {
+            bindings = <&kp LC(X)>;
+            key-positions = <42 43>;
+            require-prior-idle-ms = <150>;
         };
 
         copy {
             bindings = <&kp LC(C)>;
-            key-positions = <41 42>;
+            key-positions = <43 44>;
+            require-prior-idle-ms = <150>;
+        };
+
+        paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <44 45>;
+            require-prior-idle-ms = <150>;
         };
 
         bootloader_izq {
