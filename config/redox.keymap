@@ -85,6 +85,15 @@
                 strict-modifiers;
             };
         };
+
+        // Alt-Tab de una tecla: mantiene Alt hasta que se toca algo no ignorado.
+        // Ignorados: shifts (Shift+Tab hacia atrás) y flechas (navegar la grilla).
+        swapper: swapper {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+            ignored-key-positions = <40 55 66 67 68 69>;
+        };
     };
 
     combos {
@@ -193,7 +202,7 @@
 
             bindings = <
 &trans   &trans     &trans    &trans    &trans    &trans                                       &trans    &trans     &trans     &trans    &trans     &trans
-&kp ESC  &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT  &trans                    &trans  &trans    &trans     &trans     &trans    &trans     &kp DEL
+&kp ESC  &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT  &trans                    &trans  &trans    &swapper   &trans     &trans    &trans     &kp DEL
 &trans   &kp UNDER  &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE   &trans                    &trans  &kp HOME  &kp PG_UP  &kp PSCRN  &kp UP    &kp GRAVE  &kp TILDE
 &trans   &kp ESC    &kp LGUI  &kp LPAR  &kp RPAR  &kp TILDE  &trans  &trans    &trans  &trans  &kp END   &kp PG_DN  &kp LEFT   &kp DOWN  &kp RIGHT  &kp RET
 &trans   &trans     &trans    &mo ADJ   &trans               &mo ADJ &trans    &trans  &trans            &trans     &trans     &trans    &trans     &trans
